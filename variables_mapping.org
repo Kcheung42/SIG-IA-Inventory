@@ -6,7 +6,7 @@ diagram to a c++ code block in repo https://github.com/firelab/behave. The git c
 this document is: "c1f3d3dc7b60d4b80dae37779cc1da6462b4d474".
 
 Tags that need fixing:
-1. #missing: could not find code block. Need to look into. (9)
+1. #todos: could not find code block. Need to look into. (9)
 2. #compute: Need to compute from formula either in pdf or behave6. Aslso need to build setter/getter fns (9)
 3. #make-getter: Variable exists, but need a public getter (4)
 4. #make-setter: Need public setter fn. (4)
@@ -121,7 +121,7 @@ Tags that need fixing:
 |---------------------------+----------------------------------------------------------------------------------------------|
 | Active Crown Flame Length | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L386-L389][void Spot::setFlameLength(double flameLength, LengthUnits::LengthUnitsEnum flameLengthUnits)]] |
 
-* Surface
+* SurfaceS
 ** Outputs
 *** Fire Behavior
 **** Surface Fire
@@ -349,33 +349,33 @@ const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightin
 
 **** Multiple Fuel Models
 
-| IA Variable                        | cpp code block | Note                   |
-|------------------------------------+----------------+------------------------|
-| Fuel types are randomly            |                | #missing (need setter) |
-| Fuel types are in vegetation bands |                | #missing (need setter) |
+| IA Variable                        | cpp code block | Note                 |
+|------------------------------------+----------------+----------------------|
+| Fuel types are randomly            |                | #todos (need setter) |
+| Fuel types are in vegetation bands |                | #todos (need setter) |
 
 **** Custom Fuel Models
 
-| IA Variable   | cpp code block | Note                                          |
-|---------------+----------------+-----------------------------------------------|
-| English Units |                | #missing (do no see any setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
-| Metric Units  |                | #missing (do no see any setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
+| IA Variable   | cpp code block | Note                                        |
+|---------------+----------------+---------------------------------------------|
+| English Units |                | #todos (do no see any setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
+| Metric Units  |                | #todos (do no see any setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
 
 *** Fuel Moisture
 **** Fuel moisture entered as:
 
-| IA Variable                     | cpp code block              | Note                                           |
-|---------------------------------+-----------------------------+------------------------------------------------|
-| Individual Size Class           | [[https://github.com/firelab/behave/blob/master/src/behave/surface.cpp#L474-L487][Multiple Individual Setters]] |                                                |
-| Dead, Live Herb, and Live Woody | [[https://github.com/firelab/behave/blob/master/src/behave/surface.cpp#L489-L497][Multiple Individual Setters]] |                                                |
-| Moisture Scenario               |                             | #missing (could not find setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
+| IA Variable                     | cpp code block              | Note                                         |
+|---------------------------------+-----------------------------+----------------------------------------------|
+| Individual Size Class           | [[https://github.com/firelab/behave/blob/master/src/behave/surface.cpp#L474-L487][Multiple Individual Setters]] |                                              |
+| Dead, Live Herb, and Live Woody | [[https://github.com/firelab/behave/blob/master/src/behave/surface.cpp#L489-L497][Multiple Individual Setters]] |                                              |
+| Moisture Scenario               |                             | #todos (could not find setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
 
 **** Dynamic Curing Load Transfer
 
-| IA Variable                     | cpp code block | Note                                                                |
-|---------------------------------+----------------+---------------------------------------------------------------------|
-| Calculated from Live Herbaceous |                | #missing (could not find reference to dynamic curing load transfer) |
-| Input Directly                  |                | #missing (could not find reference to dynamic curing load transfer) |
+| IA Variable                     | cpp code block | Note                                                              |
+|---------------------------------+----------------+-------------------------------------------------------------------|
+| Calculated from Live Herbaceous |                | #todos (could not find reference to dynamic curing load transfer) |
+| Input Directly                  |                | #todos (could not find reference to dynamic curing load transfer) |
 
 *** Size
 **** Fire
@@ -422,10 +422,10 @@ const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightin
 
 ***** Wind and slope
 
-| IA Variable                               | cpp code block | Note                                               |
-|-------------------------------------------+----------------+----------------------------------------------------|
-| are aligned wind is +- 30 from upslope    |                | #missing (no reference in [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h][spotInputs.h]] or [[https://github.com/firelab/behave/blob/master/src/behave/spot.h][spot.h]] ) |
-| are NOT aligned wind is > 30 from uplsope |                | #missing (no reference in [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h][spotInputs.h]] or [[https://github.com/firelab/behave/blob/master/src/behave/spot.h][spot.h]] ) |
+| IA Variable                               | cpp code block | Note                                             |
+|-------------------------------------------+----------------+--------------------------------------------------|
+| are aligned wind is +- 30 from upslope    |                | #todos (no reference in [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h][spotInputs.h]] or [[https://github.com/firelab/behave/blob/master/src/behave/spot.h][spot.h]] ) |
+| are NOT aligned wind is > 30 from uplsope |                | #todos (no reference in [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h][spotInputs.h]] or [[https://github.com/firelab/behave/blob/master/src/behave/spot.h][spot.h]] ) |
 
 * Mortality
 ** Outputs

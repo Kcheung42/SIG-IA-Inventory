@@ -6,14 +6,14 @@ diagram to a c++ code block in repo https://github.com/firelab/behave. The git c
 this document is: "c1f3d3dc7b60d4b80dae37779cc1da6462b4d474".
 
 Tags that need fixing:
-1. #todos: could not find code block. Need to look into. (9)
-2. #compute: Need to compute from formula either in pdf or behave6. Aslso need to build setter/getter fns (9)
+1. #todos: could not find code block. Need to look into. (0)
+2. #compute: Need to compute from formula either in pdf or behave6. Aslso need to build setter/getter fns (8)
 3. #make-getter: Variable exists, but need a public getter (4)
-4. #make-setter: Need public setter fn. (4)
+4. #make-setter: Need public setter fn. (7)
 5. #ws-variable: No need to update behave. Value should be stored in the worksheet and used to either toggle conditioned inputs/outputs ro passed to the solver (10)
-6. #behave6: Code block is in the behave6 repo. Needs to be ported over to behave-mirror (15)
+6. #behave6: Code block is in the behave6 repo. Needs to be ported over to behave-mirror (16)
 7. #fix: Code block is wrong and need fixing, see notes. (1)
-8. #review: See notes (3)
+8. #review: See notes (0)
 7. #diagram: related to the diagram work. (1)
 
 * Crown

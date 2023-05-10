@@ -121,7 +121,7 @@ Tags that need fixing:
 |---------------------------+----------------------------------------------------------------------------------------------|
 | Active Crown Flame Length | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L386-L389][void Spot::setFlameLength(double flameLength, LengthUnits::LengthUnitsEnum flameLengthUnits)]] |
 
-* SurfaceS
+* Surface
 ** Outputs
 *** Fire Behavior
 **** Surface Fire
@@ -139,13 +139,11 @@ Tags that need fixing:
 *** Intermediates
 **** Fuel Moisture
 
-| IA Variable                      | cpp code block | Note                                                               |
-|----------------------------------+----------------+--------------------------------------------------------------------|
-| Characteristic Dead              |                | #compute (multiply [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L92][void sumFractionOfTotalSurfaceAreaBySizeClass(const double areaWeightingFactorDeadOrLive[FuelConstants::MAX_PARTICLES],
-const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightingFactors[FuelConstants::MAX_PARTICLES]);]] by [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L110][weightedMoisture_[FuelConstants::MAX_LIFE_STATES];]]  ) |
-| Characteristic Live              |                | #compute (multiply [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L92][void sumFractionOfTotalSurfaceAreaBySizeClass(const double areaWeightingFactorDeadOrLive[FuelConstants::MAX_PARTICLES],
-const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightingFactors[FuelConstants::MAX_PARTICLES]);]] by [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L110][weightedMoisture_[FuelConstants::MAX_LIFE_STATES];]]  )       |
-| Live Fuel Moisture of Extinction |                | #make-getter (need getter [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.cpp#L744][moistureOfExtinction_[FuelConstants::LIVE]​]] ) |
+| IA Variable                      | cpp code block | Note                                                                    |
+|----------------------------------+----------------+-------------------------------------------------------------------------|
+| Characteristic Dead              |                | #make-getter (see [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L110][weightedMoisture_[FuelConstants::MAX_LIFE_STATES];]]  ) |
+| Characteristic Live              |                | #make-getter (see [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L110][weightedMoisture_[FuelConstants::MAX_LIFE_STATES];]]  ) |
+| Live Fuel Moisture of Extinction |                | #make-getter (need getter [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.cpp#L744][moistureOfExtinction_[FuelConstants::LIVE]​]] )  |
 
 **** Fuel Characteristics
 
@@ -277,11 +275,11 @@ const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightin
 *** Spot
 **** Maximum Spotting Distance
 
-| IA Variable              | cpp code block                                                                                                             | Note                                                                          |
-|--------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------|
-| Torching Trees           | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L581-L584][double Spot::getMaxMountainousTerrainSpottingDistanceFromTorchingTrees(LengthUnits::LengthUnitsEnum spottingDistanceUnits)]] | #review make sure if topography is null, is the flat distance passed through? |
-| Burning Pile             | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L581-L584][double Spot::getMaxMountainousTerrainSpottingDistanceFromTorchingTrees(LengthUnits::LengthUnitsEnum spottingDistanceUnits)]] | #review make sure if topography is null, is the flat distance passed through? |
-| Wind-Driven Surface Fire | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L581-L584][double Spot::getMaxMountainousTerrainSpottingDistanceFromTorchingTrees(LengthUnits::LengthUnitsEnum spottingDistanceUnits)]] | #review make sure if topography is null, is the flat distance passed through? |
+| IA Variable              | cpp code block                                                                                                             | Note |
+|--------------------------+----------------------------------------------------------------------------------------------------------------------------+------|
+| Torching Trees           | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L581-L584][double Spot::getMaxMountainousTerrainSpottingDistanceFromTorchingTrees(LengthUnits::LengthUnitsEnum spottingDistanceUnits)]] |      |
+| Burning Pile             | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L581-L584][double Spot::getMaxMountainousTerrainSpottingDistanceFromTorchingTrees(LengthUnits::LengthUnitsEnum spottingDistanceUnits)]] |      |
+| Wind-Driven Surface Fire | [[https://github.com/firelab/behave/blob/master/src/behave/spot.cpp#L581-L584][double Spot::getMaxMountainousTerrainSpottingDistanceFromTorchingTrees(LengthUnits::LengthUnitsEnum spottingDistanceUnits)]] |      |
 
 **** Burning Pile
 
@@ -349,33 +347,33 @@ const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightin
 
 **** Multiple Fuel Models
 
-| IA Variable                        | cpp code block | Note                 |
-|------------------------------------+----------------+----------------------|
-| Fuel types are randomly            |                | #todos (need setter) |
-| Fuel types are in vegetation bands |                | #todos (need setter) |
+| IA Variable                        | cpp code block                                                                            | Note |
+|------------------------------------+-------------------------------------------------------------------------------------------+------|
+| Fuel types are randomly            | [[https://github.com/firelab/behave/blob/master/src/behave/surface.h#LL99C25-L99C25][setTwoFuelModelsMethod(TwoFuelModelsMethod::TwoFuelModelsMethodEnum  twoFuelModelsMethod)]] |      |
+| Fuel types are in vegetation bands | [[https://github.com/firelab/behave/blob/master/src/behave/surface.h#LL99C25-L99C25][setTwoFuelModelsMethod(TwoFuelModelsMethod::TwoFuelModelsMethodEnum  twoFuelModelsMethod)]] |      |
 
 **** Custom Fuel Models
 
-| IA Variable   | cpp code block | Note                                        |
-|---------------+----------------+---------------------------------------------|
-| English Units |                | #todos (do no see any setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
-| Metric Units  |                | #todos (do no see any setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
+| IA Variable   | cpp code block | Note     |
+|---------------+----------------+----------|
+| English Units |                | #wont-do |
+| Metric Units  |                | #wont-do |
 
 *** Fuel Moisture
 **** Fuel moisture entered as:
 
-| IA Variable                     | cpp code block              | Note                                         |
-|---------------------------------+-----------------------------+----------------------------------------------|
-| Individual Size Class           | [[https://github.com/firelab/behave/blob/master/src/behave/surface.cpp#L474-L487][Multiple Individual Setters]] |                                              |
-| Dead, Live Herb, and Live Woody | [[https://github.com/firelab/behave/blob/master/src/behave/surface.cpp#L489-L497][Multiple Individual Setters]] |                                              |
-| Moisture Scenario               |                             | #todos (could not find setters in [[https://github.com/firelab/behave/blob/master/src/behave/surface.h][surface.h]]) |
+| IA Variable                     | cpp code block | Note                                                                                                                                          |
+|---------------------------------+----------------+-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Individual Size Class           |                | #make-setter #add-enum                                                                                                                        |
+| Dead, Live Herb, and Live Woody |                | #make-setter #compute #ask-fa (does this mean dead is user enterd, live is calculated from [[https://github.com/firelab/behave/blob/master/src/behave/surfaceFuelbedIntermediates.h#L110][weightedMoisture_[FuelConstants::MAX_LIFE_STATES]​]]) |
+| Moisture Scenario               |                | #make-setter #behave6 (port over [[https://gitlab.com/sig-gis/behave6/-/blob/main/src/moisscenario.h][moisscenario.h]] ) #add-enum                                                                                   |
 
 **** Dynamic Curing Load Transfer
 
-| IA Variable                     | cpp code block | Note                                                              |
-|---------------------------------+----------------+-------------------------------------------------------------------|
-| Calculated from Live Herbaceous |                | #todos (could not find reference to dynamic curing load transfer) |
-| Input Directly                  |                | #todos (could not find reference to dynamic curing load transfer) |
+| IA Variable                     | cpp code block | Note     |
+|---------------------------------+----------------+----------|
+| Calculated from Live Herbaceous |                | #wont-do |
+| Input Directly                  |                | #wont-do |
 
 *** Size
 **** Fire
@@ -412,20 +410,18 @@ const double savrDeadOrLive[FuelConstants::MAX_PARTICLES], double summedWeightin
 **** Wind Speed
 ***** Wind speed is entered as
 
-| IA Variable                           | cpp code block                                                                                     | Note |
-|---------------------------------------+----------------------------------------------------------------------------------------------------+------|
-| 20-ft Wind and Wind Adjustment Factor | [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h#L80][setWindSpeedAtTwentyFeet(double windSpeedAtTwentyFeet, SpeedUnits::SpeedUnitsEnum windSpeedUnits);]] |      |
-| Midflame (eye level) Wind             |                                                                                                    |      |
-| 10-m Wind and Wind Adjustment Factor  |                                                                                                    |      |
-| Wind and Slope                        |                                                                                                    |      |
-|                                       |                                                                                                    |      |
+| IA Variable                           | cpp code block                                                                            | Note |
+|---------------------------------------+-------------------------------------------------------------------------------------------+------|
+| 20-ft Wind and Wind Adjustment Factor | [[https://github.com/firelab/behave/blob/master/src/behave/surface.h#L96][setWindHeightInputMode(WindHeightInputMode::WindHeightInputModeEnum windHeightInputMode);]] |      |
+| Midflame (eye level) Wind             | [[https://github.com/firelab/behave/blob/master/src/behave/surface.h#L96][setWindHeightInputMode(WindHeightInputMode::WindHeightInputModeEnum windHeightInputMode);]] |      |
+| 10-m Wind and Wind Adjustment Factor  | [[https://github.com/firelab/behave/blob/master/src/behave/surface.h#L96][setWindHeightInputMode(WindHeightInputMode::WindHeightInputModeEnum windHeightInputMode);]] |      |
 
 ***** Wind and slope
 
-| IA Variable                               | cpp code block | Note                                             |
-|-------------------------------------------+----------------+--------------------------------------------------|
-| are aligned wind is +- 30 from upslope    |                | #todos (no reference in [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h][spotInputs.h]] or [[https://github.com/firelab/behave/blob/master/src/behave/spot.h][spot.h]] ) |
-| are NOT aligned wind is > 30 from uplsope |                | #todos (no reference in [[https://github.com/firelab/behave/blob/master/src/behave/spotInputs.h][spotInputs.h]] or [[https://github.com/firelab/behave/blob/master/src/behave/spot.h][spot.h]] ) |
+| IA Variable                               | cpp code block | Note    |
+|-------------------------------------------+----------------+---------|
+| are aligned wind is +- 30 from upslope    |                | #thomas |
+| are NOT aligned wind is > 30 from uplsope |                | #thomas |
 
 * Mortality
 ** Outputs

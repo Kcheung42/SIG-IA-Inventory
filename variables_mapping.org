@@ -426,19 +426,18 @@ Tags that need fixing:
 * Mortality
 ** Outputs
 *** Scorch
-
 | IA Variable   | cpp code block                                                                                                   | Note |
 |---------------+------------------------------------------------------------------------------------------------------------------+------|
 | Scorch Height | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.cpp#L166-L169][double Mortality::getFlameLengthOrScorchHeightValue(LengthUnits::LengthUnitsEnum flameLengthOrScorchHeightUnits)]] |      |
 
 *** Tree Mortality
 
-| IA Variable                | cpp code block                                                                                       | Note                                                                                                                                                                                                                                         |
-|----------------------------+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Probability of Mortality   | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.cpp#L1847-L1850][double Mortality::getProbabilityOfMortality(ProbabilityUnits::ProbabilityUnitsEnum probabilityUnits)]] |                                                                                                                                                                                                                                              |
-| Bark Thickness             | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.cpp#L231-L234][double Mortality::getBarkThickness(LengthUnits::LengthUnitsEnum barkThicknessUnits)]]                  |                                                                                                                                                                                                                                              |
-| Tree Crown Length Scorched |                                                                                                      | Tree crown length scorched = Scorch height - (Canopy height - Live crown length). Looks like it's f_B (see [[https://github.com/firelab/behave/blob/kcheung-test/src/behave/mortality.cpp#L505][here]] )                                                                                                                            |
-| Tree Crown Volume Scorched |                                                                                                      | Tree crown volume scorched is the percentage (or fraction) of the tree crown volume that is scorched. It used to calculate tree mortality for some species and is calculated from the tree crown length scorched and the total crown length. |
+| IA Variable                | cpp code block                                                                                       | Note |
+|----------------------------+------------------------------------------------------------------------------------------------------+------|
+| Probability of Mortality   | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.cpp#L1847-L1850][double Mortality::getProbabilityOfMortality(ProbabilityUnits::ProbabilityUnitsEnum probabilityUnits)]] |      |
+| Bark Thickness             | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.cpp#L231-L234][double Mortality::getBarkThickness(LengthUnits::LengthUnitsEnum barkThicknessUnits)]]                  |      |
+| Tree Crown Length Scorched | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.h#L101][double getTreeCrownLengthScorched(MortalityRateUnits::MortalityRateUnitsEnum mortalityRateUnits)]]     |      |
+| Tree Crown Volume Scorched | [[https://github.com/firelab/behave/blob/master/src/behave/mortality.h#L102][double getTreeCrownVolumeScorched(MortalityRateUnits::MortalityRateUnitsEnum mortalityRateUnits)]]     |      |
 
 ** Iutputs
 *** Scorch
